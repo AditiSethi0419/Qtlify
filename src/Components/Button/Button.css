@@ -1,0 +1,19 @@
+.feedback {
+  display: inline-flex;
+  padding: 10px 16px;
+  align-items: flex-start;
+  cursor: pointer;
+  gap: 10px;
+  border-radius: 12px;
+  border: 1px solid var(--primary-400, #34c94b);
+  background: #121212;
+  border-color: #121212;
+  color: var(--primary-400, #34c94b);
+  text-align: center;
+  font-size: 18px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.25px;
+}
