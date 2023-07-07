@@ -1,0 +1,27 @@
+.search_css {
+  border-radius: 8px;
+  border: 1px solid #121212;
+  background: #fff;
+  width: 560px;
+  height: 48px;
+}
+.search_css input {
+  width: 500px;
+  height: 40px;
+  border: none;
+}
+.search_css div {
+  display: flex;
+  background: #fff;
+  margin: 2px;
+  height: 40px;
+}
+.search_css button {
+    width: 50px;
+    margin: 2px;
+  border: none;
+  background-color: white;
+}
+/* .searchIcon{
+
+} */

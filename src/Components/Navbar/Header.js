@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <nav className="navbar">
       <Logo />
-      <Searchbar placeholder="Search a song of your choice"/>
+      <Searchbar />
       <Button text="Give Feedback" />
     </nav>
   );
