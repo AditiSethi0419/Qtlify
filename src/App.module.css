@@ -1,0 +1,6 @@
+.mainCardGridWrapper{
+    padding: 0 1.87rem 5rem ;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}

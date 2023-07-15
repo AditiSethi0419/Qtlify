@@ -1,6 +1,6 @@
 import React from "react";
 import "./Hero.css"
-import headphone from '../assets/vibrating_headphone.png'
+import headphone from '../../assets/vibrating_headphone.png'
 
 const Hero = () => {
   return (

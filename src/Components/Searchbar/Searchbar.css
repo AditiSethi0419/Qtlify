@@ -6,19 +6,22 @@
   height: 48px;
 }
 .search_css input {
+  border-radius: 8px;
   width: 500px;
-  height: 40px;
+  height: 48px;
   border: none;
 }
 .search_css div {
   display: flex;
   background: #fff;
-  margin: 2px;
-  height: 40px;
+  border-radius: 8px;
+  height: 48px;
 }
 .search_css button {
-    width: 50px;
-    margin: 2px;
+    width: 60px;
+    height:48px;
+    border-radius: 8px;
+   border-left: 1px black;
   border: none;
   background-color: white;
 }
