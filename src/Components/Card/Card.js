@@ -5,8 +5,10 @@ import { Chip, Tooltip } from "@mui/material";
 function Card({ data, type }) {
   const getCard = (type) => {
     switch (type) {
+      
+
       case "album": {
-        const { image, follows, title, slug, songs } = data;
+        const { image, follows, title,songs } = data;
         return (
           <Tooltip title={`${songs.length} songs`} placement="top" arrow>
             <div className={styles.wrapper}>
@@ -27,6 +29,29 @@ function Card({ data, type }) {
           </Tooltip>
         );
       }
+      case "song": {
+        const { title, image, likes } = data;
+        return (
+          <Tooltip  placement="top" arrow>
+            <div className={styles.wrapper}>
+              <div className={styles.card}>
+                <img src={image} alt="Get album" loading="lazy"/>
+                <div className={styles.banner}>
+                  <Chip
+                    label={`${likes} Likes`}
+                    size="small"
+                    className={styles.chip}
+                  />
+                </div>
+              </div>
+              <div className={styles.titleWrapper}>
+                <p>{title}</p>
+              </div>
+            </div>
+          </Tooltip>
+        );
+      }
+      
       default:
         return null;
     }

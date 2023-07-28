@@ -1,40 +1,46 @@
-//import logo from './logo.svg';
-//import './App.css';
 import React, { useState, useEffect } from "react";
 import CardGrid from "./Components/CardGrid/CardGrid";
 import Header from "../src/Components/Navbar/Header";
 import Hero from "./Components/Hero/Hero";
-import { fetchTopAlbums } from "./api/Api";
+import { fetchNewAlbums, fetchSongs, fetchTopAlbums } from "./api/Api";
 import styles from '../src/App.module.css'
 
 function App() {
-  const [data, setData] = useState([]);
-  const generateData = async () => {
+  const [topAlbumData, setTopAlbumData] = useState([]);
+  const [newAlbumData, setNewAlbumData] = useState([]);
+  const [songsData, setSongsData] = useState([]);
+
+  const fetchData = async () => {
     try {
-      const res = await fetchTopAlbums();
-      // debugger;
-      // console.log(res);
-      setData(res);
+      const [topAlbums, newAlbums, songs] = await Promise.all([
+        fetchTopAlbums(),
+        fetchNewAlbums(),
+        fetchSongs()
+      ]);
+      setTopAlbumData(topAlbums);
+      setNewAlbumData(newAlbums);
+      setSongsData(songs);
     } catch (err) {
       console.log(err);
     }
   };
-  //debugger;
-  useEffect(() => {
-    generateData();
-  }, []);
+  const  filteredData =(val)=>{
+    setSongsData(val);
 
+  }
+ /// console.log(topAlbumData);
+  useEffect(() => {
+   fetchData();
+  }, []);
+//console.log(topAlbumData);
   return (
     <div>
-      <Header />
+      <Header data={topAlbumData} />
       <Hero />
-    
-      {/* {data.map((item) => (
-        
-        <Card  data={item} type="album" />
-      ))} */}
       <div className={styles.mainCardGridWrapper}>
-      <CardGrid data={data} type="album" title="Top Albums"/>
+        <CardGrid data={topAlbumData} type="album" title="Top Albums"/>
+        <CardGrid data={newAlbumData} type="album" title="New Albums"/>
+        <CardGrid data={songsData} type="song" title="Songs" filteredData={filteredData}/>
       </div>
     </div>
   );

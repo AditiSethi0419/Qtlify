@@ -4,11 +4,12 @@ import Button from "../Button/Button";
 import "./Header.css";
 import Searchbar from "../Searchbar/Searchbar";
 
-const Header = () => {
+const Header = ({data}) => {
   return (
     <nav className="navbar">
       <Logo />
-      <Searchbar placeholder="Search a song of your choice"/>
+      <Searchbar  data={data} placeholder="Search a album of your choice"/> 
+      
       <Button text="Give Feedback" />
     </nav>
   );
